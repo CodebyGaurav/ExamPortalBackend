@@ -19,6 +19,7 @@ import com.codebygaurav.examserver.config.JwtUtils;
 import com.codebygaurav.examserver.entity.JwtRequest;
 import com.codebygaurav.examserver.entity.JwtResponse;
 import com.codebygaurav.examserver.entity.User;
+import com.codebygaurav.examserver.exceptionhandler.UserNotFoundException;
 import com.codebygaurav.examserver.service.Impl.UserDetailsServiceImpl;
 
 @RestController
@@ -41,7 +42,7 @@ public class AuthenticateController {
 		try {
 			authenticate(jwtRequest.getUsername(), jwtRequest.getPassword());
 			
-		} catch (Exception e) {
+		} catch (UserNotFoundException e) {
 			// TODO: handle exception
 			e.printStackTrace();
 			throw new Exception("User not found");

@@ -12,6 +12,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import com.codebygaurav.examserver.entity.Role;
 import com.codebygaurav.examserver.entity.User;
 import com.codebygaurav.examserver.entity.UserRole;
+import com.codebygaurav.examserver.exceptionhandler.UserFoundException;
 import com.codebygaurav.examserver.service.UserService;
 
 @SpringBootApplication
@@ -29,6 +30,8 @@ public class ExamserverApplication implements CommandLineRunner{
 	}
 
 	public void run(String... args) throws Exception {
+		try {
+		
 		System.out.println("Starting Code..");
 		
 		//admin create
@@ -55,6 +58,10 @@ public class ExamserverApplication implements CommandLineRunner{
 		User user1 = this.userService.createUser(user, userRoleSet);
 		System.out.println("Username : "+user1.getUsername());
 		
+		}catch (UserFoundException e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
 	}
 
 }
