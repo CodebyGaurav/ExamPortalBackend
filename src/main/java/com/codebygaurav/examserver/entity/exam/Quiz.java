@@ -89,6 +89,22 @@ public class Quiz {
 		this.numberOfQuestion = numberOfQuestion;
 	}
 
+	public Category getCategory() {
+		return category;
+	}
+
+	public void setCategory(Category category) {
+		this.category = category;
+	}
+
+	public Set<Question> getQuestions() {
+		return questions;
+	}
+
+	public void setQuestions(Set<Question> questions) {
+		this.questions = questions;
+	}
+
 	public boolean isActive() {
 		return active;
 	}
@@ -96,8 +112,6 @@ public class Quiz {
 	public void setActive(boolean active) {
 		this.active = active;
 	}
-	
-	
-	
 
+	
 }
