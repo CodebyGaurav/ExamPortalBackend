@@ -14,7 +14,7 @@
 	<name>examserver</name>
 	<description>Backend project for Online Exam Portal </description>
 	<properties>
-		<java.version>16</java.version>
+		<java.version>11</java.version>
 	</properties>
 	<dependencies>
 		<dependency>
